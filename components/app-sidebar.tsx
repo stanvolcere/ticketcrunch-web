@@ -25,7 +25,6 @@ type MenuItem = {
 
 export function AppSidebar(props: Props) {
     const { items } = props;
-    return <div></div>
 
   return (
     <Sidebar>
