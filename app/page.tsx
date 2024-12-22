@@ -1,11 +1,20 @@
-import Image from "next/image";
-import React from "react";
+import { redirect } from 'next/navigation'
 
-export default function Home() {
+import { createClient } from '@/utils/supabase/server'
+import Link from 'next/link'
+
+export default async function VenueCreatePage() {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase.auth.getUser()
+  if (error || !data?.user) {
+    redirect('/login')
+  }
+
   return (
-    <React.Fragment>
-      <div>TicketCrunch Logo</div>
-      <p style={{ fontSize: "30px", padding: '5rem' }}>This is just some description text to make up the numbers!</p>
-    </React.Fragment>
-  );
+    <div>
+      <div>{data.user.email}</div>
+      <p>This is the LANDING Page</p>
+    </div>
+  )
 }
