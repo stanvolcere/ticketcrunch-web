@@ -9,34 +9,9 @@ import {  Home, MapPin, Search, Settings, DoorOpen } from "lucide-react"
 const inter = Inter({ subsets: ["latin"] });
 const figtree = Figtree({ subsets: ["latin"] });
 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "/",
-    icon: Home,
-  },
-  {
-    title: "Venues",
-    url: "/venues/create",
-    icon: MapPin,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Logout",
-    url: "/auth/logout",
-    icon: DoorOpen,
-  },
-]
+// Components
+import Header from '@/components/local/partials/header'
+import Footer from '@/components/local/partials/footer'
 
 export const metadata: Metadata = {
   title: process.env.SITENAME,
@@ -48,11 +23,13 @@ export default function Layout({ children }: {
   return (
     <html lang="en" className="main">
        <body className={figtree.className}>
-          <SidebarProvider>
-            <AppSidebar items={items}/>
-              <SidebarTrigger />
-              {children}
-          </SidebarProvider>
+        <div className="h-screen flex flex-col">
+          <Header></Header>
+          <div className="grow">
+            {children}
+          </div>
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   )

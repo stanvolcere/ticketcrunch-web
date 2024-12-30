@@ -1,7 +1,9 @@
 import { redirect } from 'next/navigation'
-
 import { createClient } from '@/utils/supabase/server'
-import Link from 'next/link'
+import Link from 'next/link';
+
+import Image from 'next/image'
+import profilePic from '@/public/img/landing.jpg'
 
 export default async function VenueCreatePage() {
   const supabase = await createClient()
@@ -10,11 +12,17 @@ export default async function VenueCreatePage() {
   if (error || !data?.user) {
     redirect('/login')
   }
-
+  
   return (
-    <div>
-      <div>{data.user.email}</div>
-      <p>This is the LANDING Page</p>
+    <div className="container mx-auto ">
+      <div></div>
+      <Image
+        className='w-1/2 h-fit'
+        src={profilePic}
+        alt="Picture of the author"
+        // blurDataURL="data:..." automatically provided
+        // placeholder="blur" // Optional blur-up while loading
+      />
     </div>
   )
 }
