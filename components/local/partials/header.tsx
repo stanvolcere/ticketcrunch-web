@@ -7,8 +7,6 @@ type Link = {
 }
 
 const Header = () => {
-
-
     const links: Link[] = [
       {
         title: "Home",
