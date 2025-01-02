@@ -53,9 +53,9 @@ const Header = () => {
 
     return (
         <header className="bg-white">
-          <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             {/* Logo */}
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-2xl font-bold text-yellow-800">
               <Link href="/">TicketCrunch</Link>
             </div>
     

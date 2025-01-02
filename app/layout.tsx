@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Figtree, Inter } from "next/font/google";
+import { Figtree, Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import {  Home, MapPin, Search, Settings, DoorOpen } from "lucide-react"
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 const figtree = Figtree({ subsets: ["latin"] });
 
 // Components
