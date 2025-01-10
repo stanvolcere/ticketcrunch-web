@@ -92,7 +92,7 @@ export default async function BrowseEventsPage() {
     return fakeArray.map((e: Event, i: number) => {
         return (
           <Link key={i} href={`/events/${e.id}`}>
-            <Card className="w-80 m-5">
+            <Card className="w-80 m-2">
             <CardHeader>
               <Image src={placeholder} alt="Placeholder for now" className='rounded-md'/>
             </CardHeader>
